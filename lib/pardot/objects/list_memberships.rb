@@ -1,3 +1,5 @@
+# Modified to create a new list membership as "create" under the MIT license.
+
 module Pardot
   module Objects
     module ListMemberships
@@ -20,6 +22,11 @@ module Pardot
 
         def read_by_id id, params = {}
           get "/do/read/id/#{id}", params
+        end
+
+        # Add create
+        def create list_id, prospect_id, params = {}
+          post "/do/create/list_id/#{list_id}/prospect_id/#{prospect_id}", params
         end
 
         protected
